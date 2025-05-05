@@ -1,4 +1,4 @@
-# Machine-learning-practice-
+# Machine-learning (Multiple Linear Regression)
 # Project Description
 This project implements Multiple Linear Regression using NumPy from scratch, without using high-level ML libraries. The model is trained using Gradient Descent and predicts house prices based on various features. It includes manual feature scaling, bias handling, custom training loops, and evaluation plots.
 ### Features
