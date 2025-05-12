@@ -43,7 +43,7 @@ This project implements Multiple Linear Regression using NumPy from scratch, wit
 
 ### sample result 
 
-![Actual VS Predicted prices](graph.png)
+![Actual VS Predicted prices](graph1.png)
 
 
 
