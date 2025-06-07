@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spam Mail Detection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f4e2d8, #ba5370);
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e74c3c;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    textarea {
+      width: 80%;
+      max-width: 600px;
+      height: 150px;
+      padding: 15px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1a252f;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><strong>Spam Detector</strong></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>Welcome to Spam Mail Detection</h1>
+    <p class="subheading">Easily detect whether your email content is spam or ham!</p>
+    <form method="POST" action="">
+      <textarea name="mail" rows="6" placeholder="Paste your mail here..."></textarea>
+      <br>
+      <button type="submit">Check for Spam</button>
+    </form>
+    
+    {% if result %}
+      <div class="result">
+        <strong>Result:</strong> {{ result }}
+      </div>
+    {% endif %}
+    <div class="result">
+      <!-- This section can be populated dynamically with backend result -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Spam Mail Detection. All rights reserved.
+  </footer>
+</body>
+</html>
